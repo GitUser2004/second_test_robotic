@@ -1,0 +1,50 @@
+[0.494s] Invoking command in '/home/dylan/repos/second_test_robotic/src/dqn_robot_nav': PYTHONPATH=/home/dylan/repos/second_test_robotic/build/dqn_robot_nav/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dylan/repos/second_test_robotic/install/dqn_robot_nav/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/dqn_robot_nav build --build-base /home/dylan/repos/second_test_robotic/build/dqn_robot_nav/build install --record /home/dylan/repos/second_test_robotic/build/dqn_robot_nav/install.log --single-version-externally-managed install_data
+[0.656s] running egg_info
+[0.656s] creating ../../build/dqn_robot_nav/dqn_robot_nav.egg-info
+[0.656s] writing ../../build/dqn_robot_nav/dqn_robot_nav.egg-info/PKG-INFO
+[0.656s] writing dependency_links to ../../build/dqn_robot_nav/dqn_robot_nav.egg-info/dependency_links.txt
+[0.657s] writing entry points to ../../build/dqn_robot_nav/dqn_robot_nav.egg-info/entry_points.txt
+[0.657s] writing requirements to ../../build/dqn_robot_nav/dqn_robot_nav.egg-info/requires.txt
+[0.657s] writing top-level names to ../../build/dqn_robot_nav/dqn_robot_nav.egg-info/top_level.txt
+[0.657s] writing manifest file '../../build/dqn_robot_nav/dqn_robot_nav.egg-info/SOURCES.txt'
+[0.658s] reading manifest file '../../build/dqn_robot_nav/dqn_robot_nav.egg-info/SOURCES.txt'
+[0.658s] writing manifest file '../../build/dqn_robot_nav/dqn_robot_nav.egg-info/SOURCES.txt'
+[0.658s] running build
+[0.658s] running build_py
+[0.658s] creating /home/dylan/repos/second_test_robotic/build/dqn_robot_nav/build
+[0.658s] creating /home/dylan/repos/second_test_robotic/build/dqn_robot_nav/build/lib
+[0.658s] creating /home/dylan/repos/second_test_robotic/build/dqn_robot_nav/build/lib/dqn_robot_nav
+[0.658s] copying dqn_robot_nav/__init__.py -> /home/dylan/repos/second_test_robotic/build/dqn_robot_nav/build/lib/dqn_robot_nav
+[0.659s] copying dqn_robot_nav/state_processor.py -> /home/dylan/repos/second_test_robotic/build/dqn_robot_nav/build/lib/dqn_robot_nav
+[0.659s] copying dqn_robot_nav/environment.py -> /home/dylan/repos/second_test_robotic/build/dqn_robot_nav/build/lib/dqn_robot_nav
+[0.659s] copying dqn_robot_nav/test_node.py -> /home/dylan/repos/second_test_robotic/build/dqn_robot_nav/build/lib/dqn_robot_nav
+[0.659s] copying dqn_robot_nav/dqn_agent.py -> /home/dylan/repos/second_test_robotic/build/dqn_robot_nav/build/lib/dqn_robot_nav
+[0.659s] copying dqn_robot_nav/train_node.py -> /home/dylan/repos/second_test_robotic/build/dqn_robot_nav/build/lib/dqn_robot_nav
+[0.659s] running install
+[0.659s] running install_lib
+[0.660s] creating /home/dylan/repos/second_test_robotic/install/dqn_robot_nav/lib/python3.10/site-packages/dqn_robot_nav
+[0.660s] copying /home/dylan/repos/second_test_robotic/build/dqn_robot_nav/build/lib/dqn_robot_nav/__init__.py -> /home/dylan/repos/second_test_robotic/install/dqn_robot_nav/lib/python3.10/site-packages/dqn_robot_nav
+[0.660s] copying /home/dylan/repos/second_test_robotic/build/dqn_robot_nav/build/lib/dqn_robot_nav/state_processor.py -> /home/dylan/repos/second_test_robotic/install/dqn_robot_nav/lib/python3.10/site-packages/dqn_robot_nav
+[0.660s] copying /home/dylan/repos/second_test_robotic/build/dqn_robot_nav/build/lib/dqn_robot_nav/environment.py -> /home/dylan/repos/second_test_robotic/install/dqn_robot_nav/lib/python3.10/site-packages/dqn_robot_nav
+[0.660s] copying /home/dylan/repos/second_test_robotic/build/dqn_robot_nav/build/lib/dqn_robot_nav/test_node.py -> /home/dylan/repos/second_test_robotic/install/dqn_robot_nav/lib/python3.10/site-packages/dqn_robot_nav
+[0.660s] copying /home/dylan/repos/second_test_robotic/build/dqn_robot_nav/build/lib/dqn_robot_nav/dqn_agent.py -> /home/dylan/repos/second_test_robotic/install/dqn_robot_nav/lib/python3.10/site-packages/dqn_robot_nav
+[0.660s] copying /home/dylan/repos/second_test_robotic/build/dqn_robot_nav/build/lib/dqn_robot_nav/train_node.py -> /home/dylan/repos/second_test_robotic/install/dqn_robot_nav/lib/python3.10/site-packages/dqn_robot_nav
+[0.660s] byte-compiling /home/dylan/repos/second_test_robotic/install/dqn_robot_nav/lib/python3.10/site-packages/dqn_robot_nav/__init__.py to __init__.cpython-310.pyc
+[0.660s] byte-compiling /home/dylan/repos/second_test_robotic/install/dqn_robot_nav/lib/python3.10/site-packages/dqn_robot_nav/state_processor.py to state_processor.cpython-310.pyc
+[0.661s] byte-compiling /home/dylan/repos/second_test_robotic/install/dqn_robot_nav/lib/python3.10/site-packages/dqn_robot_nav/environment.py to environment.cpython-310.pyc
+[0.662s] byte-compiling /home/dylan/repos/second_test_robotic/install/dqn_robot_nav/lib/python3.10/site-packages/dqn_robot_nav/test_node.py to test_node.cpython-310.pyc
+[0.662s] byte-compiling /home/dylan/repos/second_test_robotic/install/dqn_robot_nav/lib/python3.10/site-packages/dqn_robot_nav/dqn_agent.py to dqn_agent.cpython-310.pyc
+[0.663s] byte-compiling /home/dylan/repos/second_test_robotic/install/dqn_robot_nav/lib/python3.10/site-packages/dqn_robot_nav/train_node.py to train_node.cpython-310.pyc
+[0.663s] running install_data
+[0.663s] creating /home/dylan/repos/second_test_robotic/install/dqn_robot_nav/share/ament_index
+[0.663s] creating /home/dylan/repos/second_test_robotic/install/dqn_robot_nav/share/ament_index/resource_index
+[0.663s] creating /home/dylan/repos/second_test_robotic/install/dqn_robot_nav/share/ament_index/resource_index/packages
+[0.663s] copying resource/dqn_robot_nav -> /home/dylan/repos/second_test_robotic/install/dqn_robot_nav/share/ament_index/resource_index/packages
+[0.663s] copying package.xml -> /home/dylan/repos/second_test_robotic/install/dqn_robot_nav/share/dqn_robot_nav
+[0.663s] running install_egg_info
+[0.664s] Copying ../../build/dqn_robot_nav/dqn_robot_nav.egg-info to /home/dylan/repos/second_test_robotic/install/dqn_robot_nav/lib/python3.10/site-packages/dqn_robot_nav-0.0.0-py3.10.egg-info
+[0.665s] running install_scripts
+[0.679s] Installing test_node script to /home/dylan/repos/second_test_robotic/install/dqn_robot_nav/lib/dqn_robot_nav
+[0.679s] Installing train_node script to /home/dylan/repos/second_test_robotic/install/dqn_robot_nav/lib/dqn_robot_nav
+[0.679s] writing list of installed files to '/home/dylan/repos/second_test_robotic/build/dqn_robot_nav/install.log'
+[0.696s] Invoked command in '/home/dylan/repos/second_test_robotic/src/dqn_robot_nav' returned '0': PYTHONPATH=/home/dylan/repos/second_test_robotic/build/dqn_robot_nav/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dylan/repos/second_test_robotic/install/dqn_robot_nav/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/dqn_robot_nav build --build-base /home/dylan/repos/second_test_robotic/build/dqn_robot_nav/build install --record /home/dylan/repos/second_test_robotic/build/dqn_robot_nav/install.log --single-version-externally-managed install_data
