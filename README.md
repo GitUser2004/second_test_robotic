@@ -38,12 +38,12 @@ export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:/opt/ros/humble/share/turtlebot3_gaz
 
 ```bash
 # Create and build workspace
-mkdir -p ~/dqn_navigation_ws/src
-cd ~/dqn_navigation_ws/src
+mkdir -p ~/dqn_navigation_ws/
+cd ~/dqn_navigation_ws/
 ```
 
-the following steps are to copy the content of the github
-- copy all the files of the github in the workspace
+the following steps are neccesary for the first exercise
+- copy all the files of the folder p1 in the workspace **dqn_navigation_ws**
 - make a colcon build
 ```bash
 colcon build
@@ -82,3 +82,37 @@ colcon build
 source install/setup.bash
 ros2 run dqn_robot_nav test_node
 ```
+
+
+## Exercise 2
+for this exercise it is neccesary the following archives of rosbag:
+**https://drive.google.com/drive/folders/18W1yZCbDVFbHhpRyzelfaHJ892iqRWMr?usp=drive_link**
+
+To run and visualize the entire TurtleBot3 visual control system, follow these steps in separate terminal windows:
+
+1. **Launch the empty Gazebo environment with TurtleBot3**:
+   ```bash
+   ros2 launch turtlebot3_gazebo empty_world.launch.py
+   ```
+
+2. **Play the Kinect camera recording** (contains the RGB image used by the gesture detector):
+   ```bash
+   ros2 bag play kinect_data2
+   ```
+
+3. **Run the gesture perception node** (detects human pose and publishes commands to `/gesture_command`):
+   ```bash
+   ros2 run gesture_perception gesture_detector
+   ```
+
+4. **Start the micro-ROS agent to communicate with the ESP32** (ensure the ESP32 is connected via USB):
+   ```bash
+   docker run -it --rm --privileged -v /dev:/dev --network=host microros/micro-ros-agent:humble serial --dev /dev/ttyUSB0 -b 115200
+   ```
+
+5. **Monitor the velocity commands received by the robot**:
+   ```bash
+   ros2 topic echo /cmd_vel
+   ```
+
+
