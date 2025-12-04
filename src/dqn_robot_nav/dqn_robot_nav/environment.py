@@ -36,9 +36,9 @@ class TurtleBot3Env(Node):
         )
 
         if not os.path.exists(self.model_sdf_path):
-            self.get_logger().error(f"❌ SDF model not found: {self.model_sdf_path}")
+            self.get_logger().error(f"SDF model not found: {self.model_sdf_path}")
         else:
-            self.get_logger().info(f"✔ Loaded model: {self.model_sdf_path}")
+            self.get_logger().info(f"Loaded model: {self.model_sdf_path}")
 
         self.actions = {
             0: (0.10, 0.0),

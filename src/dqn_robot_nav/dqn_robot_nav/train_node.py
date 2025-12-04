@@ -15,23 +15,14 @@ class DQNTrainingNode(Node):
     def __init__(self):
         super().__init__("dqn_training_node")
 
-        # =========================
-        # CONFIGURACIÓN DE ENTRENAMIENTO
-        # =========================
         self.n_episodes = 400
-        self.max_steps_per_episode = 1200   # ← pequeño ajuste para más éxito
+        self.max_steps_per_episode = 1200   # pequeño ajuste para más éxito
         self.state_size = 12
         self.action_size = 5
 
-        # =========================
-        # ENTORNO Y PROCESADOR
-        # =========================
         self.env = TurtleBot3Env()
         self.state_processor = StateProcessor(n_lidar_bins=10)
 
-        # =========================
-        # AGENTE DQN
-        # =========================
         self.agent = DQNAgent(
             state_size=self.state_size,
             action_size=self.action_size,
@@ -39,14 +30,11 @@ class DQNTrainingNode(Node):
             gamma=0.99,
             epsilon=1.0,
             epsilon_min=0.05,
-            epsilon_decay=0.997,     # ← CAMBIO SUAVE
+            epsilon_decay=0.997,     # CAMBIO SUAVE
             memory_size=20000,
             batch_size=64
         )
 
-        # =========================
-        # PARA GENERAR CURVAS
-        # =========================
         self.reward_history = []
         self.epsilon_history = []
         self.loss_history = []
@@ -54,8 +42,6 @@ class DQNTrainingNode(Node):
         self.success_count = 0
         self.collision_count = 0
 
-
-    # ===================================================
     def get_processed_state(self):
         if self.env.scan_data is None:
             rclpy.spin_once(self.env, timeout_sec=0.1)
@@ -72,9 +58,8 @@ class DQNTrainingNode(Node):
             return None
 
 
-    # ===================================================
     def train(self):
-        self.get_logger().info("🚀 Starting DQN Training...")
+        self.get_logger().info("Starting DQN Training...")
 
         for episode in range(self.n_episodes):
 
@@ -87,9 +72,6 @@ class DQNTrainingNode(Node):
 
             total_reward = 0
 
-            # =======================
-            # LOOP DEL EPISODIO
-            # =======================
             for step in range(self.max_steps_per_episode):
 
                 action = self.agent.act(state, training=True)
@@ -133,15 +115,8 @@ class DQNTrainingNode(Node):
                     f"Success={success_rate:.1f}%"
                 )
 
-        # =========================
-        # GUARDAR MODELO
-        # =========================
         self.agent.save("trained_model3.pkl")
-        self.get_logger().info("💾 Modelo guardado correctamente")
-
-        # =========================
-        # GENERAR CURVAS PARA REPORTE
-        # =========================
+        self.get_logger().info("Model saved")
 
         # --- REWARD CURVE ---
         plt.figure()
@@ -173,8 +148,8 @@ class DQNTrainingNode(Node):
         plt.savefig("loss_curve.jpg")
         plt.close()
 
-        self.get_logger().info("📊 Gráficas guardadas: reward_curve.jpg, epsilon_decay.jpg, loss_curve.jpg")
-        self.get_logger().info("🎉 TRAINING COMPLETED")
+        self.get_logger().info("Gráficas guardadas: reward_curve.jpg, epsilon_decay.jpg, loss_curve.jpg")
+        self.get_logger().info("TRAINING COMPLETED")
 
 
 def main(args=None):
