@@ -115,4 +115,32 @@ To run and visualize the entire TurtleBot3 visual control system, follow these s
    ros2 topic echo /cmd_vel
    ```
 
+## Exercise 3
+
+To run and visualize the entire TurtleBot3 visual control system with depth-based safety, follow these steps in separate terminal windows:
+
+1. **Launch the empty Gazebo environment with TurtleBot3**:
+   ```bash
+   ros2 launch turtlebot3_gazebo empty_world.launch.py
+   ```
+
+2. **Play the Kinect camera recording** (provides RGB and depth images for gesture and obstacle detection):
+   ```bash
+   ros2 bag play kinect_data2
+   ```
+
+3. **Run the gesture perception node** (detects human pose, classifies gestures, and computes distance zones):
+   ```bash
+   ros2 run gesture_perception gesture_detector
+   ```
+
+4. **Start the micro-ROS agent to communicate with the ESP32** (ensure the ESP32 is connected via USB):
+   ```bash
+   docker run -it --rm --privileged -v /dev:/dev --network=host microros/micro-ros-agent:humble serial --dev /dev/ttyUSB0 -b 115200
+   ```
+
+5. **Monitor the velocity commands received by the robot** (to see how safety logic modulates speed):
+   ```bash
+   ros2 topic echo /cmd_vel
+   ```
 
