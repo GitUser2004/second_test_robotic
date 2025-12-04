@@ -97,7 +97,7 @@ class DQNTestNode(Node):
 
     # ===================================================
     def run_tests(self, n_tests=10):
-        """Ejecuta N pruebas y muestra un resumen."""
+        """End of N tests."""
 
         results = []
         rewards = []
